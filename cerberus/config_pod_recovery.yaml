@@ -6,6 +6,8 @@ cerberus:
     watch_cluster_operators: True                        # Set to True for cerberus to monitor cluster operators
     watch_url_routes:
     - - http://dittybopper-dittybopper.apps.example.com <replace with app url to monitor the uptime and ingress>                                      # Route url's you want to monitor, this is a double array with the url and optional authorization parameter
+     - - https://console.example.com
+      - <$(oc create token -n openshift-console console)>
     watch_terminating_namespaces: True                   # Set to True to monitor if any namespaces in the 'watch_namespaces' list start terminating
     watch_master_schedulable:                            # When enabled checks for the schedulable master nodes with given label.
         enabled: True
